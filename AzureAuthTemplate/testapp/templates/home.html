@@ -1,0 +1,76 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}{{ page_title|default:'Home — Azure AD Demo' }}{% endblock %}
+
+{% block content %}
+    {% if azure_user %}
+        {# Preferred: use the normalized azure_user (dict) provided by the context processor/middleware #}
+        <div class="card">
+            <h2>Welcome, {{ azure_user.name|default:azure_user.user_id }}</h2>
+            <p class="lead">You are authenticated with Azure Active Directory.</p>
+
+            <div class="grid" style="margin-top:14px">
+                <div>
+                    <strong>Name</strong>
+                    <div class="muted">{{ azure_user.name|default:azure_user.email }}</div>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <div class="muted">{{ azure_user.email|default:user.email }}</div>
+                </div>
+                <div>
+                    <strong>Position</strong>
+                    <div class="muted">{{ azure_user.position|default:'Not specified' }}</div>
+                </div>
+                <div>
+                    <strong>Location</strong>
+                    <div class="muted">{{ azure_user.office_location|default:'Not specified' }}</div>
+                </div>
+            </div>
+
+            {% if azure_user.roles %}
+                <div style="margin-top:12px">
+                    <strong>Roles</strong>
+                    <div class="roles">
+                        {% for role in azure_user.roles %}
+                            <span class="role">{{ role }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn btn-primary" href="{% url 'azure_protected' %}">Access Protected Area</a>
+                <a class="btn btn-ghost" href="{% url 'azure_auth:logout' %}?next={{ request.path }}">Sign Out</a>
+            </div>
+        </div>
+    {% elif user.is_authenticated %}
+        {# Fallback: user is authenticated but no azure_user payload; show safe minimal info only #}
+        <div class="card">
+            <h2>Welcome, {{ user.get_username }}</h2>
+            <p class="lead">You are authenticated.</p>
+            <div class="grid" style="margin-top:14px">
+                <div>
+                    <strong>Name</strong>
+                    <div class="muted">{{ user.get_username }}</div>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <div class="muted">{{ user.email }}</div>
+                </div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn btn-primary" href="{% url 'azure_protected' %}">Access Protected Area</a>
+                <a class="btn btn-ghost" href="{% url 'azure_auth:logout' %}?next={{ request.path }}">Sign Out</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="card">
+            <h2>Please sign in</h2>
+            <p class="lead">This demo requires Azure Active Directory authentication to continue.</p>
+            <div style="margin-top:12px">
+                <a class="btn btn-primary" href="{% url 'azure_auth:login' %}?next={{ request.path }}">Sign in with Azure AD</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

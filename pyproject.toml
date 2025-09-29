@@ -1,0 +1,32 @@
+[project]
+name = "django-microsoft-auth-demo"
+version = "0.1.0"
+description = "A comprehensive Django application demonstrating Microsoft Azure Active Directory authentication integration with role-based access control, custom backends, and professional UI components."
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+keywords = ["django", "azure", "azure-ad", "authentication", "microsoft", "oauth2", "sso"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration :: Authentication/Directory",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "django==4.2.6",
+    "django-azure-auth==2.3.0",
+    "environs>=14.3.0",
+    "psycopg2>=2.9.10",
+    "pydantic[email]>=2.11.9",
+]

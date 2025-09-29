@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ page_title|default:'Protected — Azure AD Demo' }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2>🔒 Protected Area</h2>
+        <p class="lead">{{ message }}</p>
+
+        <div class="status warn" style="margin-top:10px">Access to this page requires Azure AD authentication. Permissions are enforced at the application level.</div>
+    </div>
+
+    {% if azure_user %}
+        <div class="card">
+            <h2>Authenticated User Details</h2>
+
+            <div class="grid" style="margin-top:12px">
+                <div>
+                    <strong>Username</strong>
+                    <div class="muted">{{ azure_user.first_name|default:azure_user.name|default:user.get_username }}</div>
+                </div>
+                <div>
+                    <strong>Full Name</strong>
+                    <div class="muted">{{ azure_user.name|default:user.get_full_name }}</div>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <div class="muted">{{ azure_user.email|default:user.email }}</div>
+                </div>
+                <div>
+                    <strong>User ID</strong>
+                    <div class="muted">{{ azure_user.user_id|default:'' }}</div>
+                </div>
+            </div>
+
+            <div class="grid" style="margin-top:12px">
+                <div>
+                    <strong>Position</strong>
+                    <div class="muted">{{ azure_user.position|default:'Not specified' }}</div>
+                </div>
+                <div>
+                    <strong>Office</strong>
+                    <div class="muted">{{ azure_user.office_location|default:'Not specified' }}</div>
+                </div>
+                <div>
+                    <strong>Authentication</strong>
+                    <div class="muted">Azure Active Directory</div>
+                </div>
+                <div>
+                    <strong>Session</strong>
+                    <div class="muted">Active</div>
+                </div>
+            </div>
+
+            {% if azure_user.roles %}
+                <div style="margin-top:10px">
+                    <strong>Assigned Roles</strong>
+                    <div class="roles">
+                        {% for role in azure_user.roles %}
+                            <span class="role">{{ role }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div style="margin-top:16px;display:flex;gap:10px">
+                <a class="btn btn-ghost" href="{% url 'home' %}">← Back to Home</a>
+                <a class="btn btn-primary" href="{% url 'azure_auth:logout' %}">Sign Out</a>
+            </div>
+        </div>
+    {% elif user.is_authenticated %}
+        <div class="card">
+            <h2>Authenticated User Details</h2>
+            <div class="grid" style="margin-top:12px">
+                <div>
+                    <strong>Username</strong>
+                    <div class="muted">{{ user.get_username }}</div>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <div class="muted">{{ user.email }}</div>
+                </div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px">
+                <a class="btn btn-ghost" href="{% url 'home' %}">← Back to Home</a>
+                <a class="btn btn-primary" href="{% url 'azure_auth:logout' %}">Sign Out</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

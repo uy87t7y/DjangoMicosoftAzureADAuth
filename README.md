@@ -1,6 +1,6 @@
 # Django Microsoft Azure AD Authentication Demo
 
-A comprehensive Django application demonstrating Microsoft Azure Active Directory (Azure AD) authentication integration using the `django-azure-auth` library. This project showcases enterprise-grade authentication with role-based access control, custom backends, middleware, and context processors.
+A comprehensive Django application demonstrating Microsoft Azure Active Directory (Azure AD) authentication integration using the [django-azure-auth](https://pypi.org/project/django-azure-auth/) library. This project showcases enterprise-grade authentication with role-based access control, custom backends, middleware, and context processors.
 
 ![Django](https://img.shields.io/badge/Django-4.2.6-green) ![Azure AD](https://img.shields.io/badge/Azure%20AD-Integration-blue) ![Python](https://img.shields.io/badge/Python-3.11+-blue) ![UV](https://img.shields.io/badge/UV-Package%20Manager-orange)
 
@@ -141,15 +141,6 @@ SECRET_KEY='your-django-secret-key-here'
 DEBUG=True
 ```
 
-```env
-# Azure AD Configuration
-AZURE_CLIENT_ID='your-application-client-id'
-AZURE_CLIENT_SECRET='your-client-secret-value'
-AZURE_TENANT_ID='your-tenant-id'
-AZURE_AUTHORITY='https://login.microsoftonline.com/'
-AZURE_SCOPES='User.Read,User.Read.All,Group.Read.All'
-```
-
 #### Environment Variables Explanation
 
 | Variable | Description | Example |
@@ -159,6 +150,8 @@ AZURE_SCOPES='User.Read,User.Read.All,Group.Read.All'
 | `AZURE_TENANT_ID` | Directory (tenant) ID | `your-tenant-id` |
 | `AZURE_AUTHORITY` | Microsoft authority URL | `https://login.microsoftonline.com/` |
 | `AZURE_SCOPES` | Comma-separated list of required scopes | `User.Read,User.Read.All,Group.Read.All` |
+| `SECRET_KEY` | Django secret key for cryptographic signing | `your-django-secret-key-here` |
+| `DEBUG` | Enable/disable debug mode | `True` or `False` |
 
 ### 5. Database Setup
 

